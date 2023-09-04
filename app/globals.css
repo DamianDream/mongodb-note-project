@@ -6,3 +6,7 @@
 body {
     @apply bg-gradient-to-r from-[#606c88] to-[#3f4c6b]
 }
+
+.myButton {
+    @apply text-white border rounded-[.5rem] py-2.5 px-4 hover:bg-white hover:text-green-600
+}

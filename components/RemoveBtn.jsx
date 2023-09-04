@@ -7,7 +7,7 @@ function RemoveBtn({ id }) {
     const router = useRouter()
 
     const removeTodo = async () => {
-        const res = await fetch(`http://localhost:3000/api/todos?id=${id}`, {
+        const res = await fetch(`/api/todos?id=${id}`, {
             method: "DELETE",
         })
 

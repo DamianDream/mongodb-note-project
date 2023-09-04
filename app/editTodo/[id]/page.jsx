@@ -2,8 +2,10 @@
 import EditTodoForm from "@/components/EditTodoForm"
 
 const getTodoById = async (id) => {
+    const apiUrl = process.env.API_URL
+
     try {
-        const res = await fetch(`http://localhost:3000/api/todos/${id}`, {
+        const res = await fetch(`${apiUrl}/api/todos/${id}`, {
             cache: 'no-store'
         })
 

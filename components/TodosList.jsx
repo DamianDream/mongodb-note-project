@@ -1,13 +1,13 @@
 import TodoItem from '@/components/TodoItem'
 const getTodos = async() => {
-    const url = 'http://localhost:3000/api/todos'
+    const apiUrl = process.env.API_URL
     try {
-         const res = await fetch(url, {
+         const res = await fetch(`${apiUrl}/api/todos`, {
             cache: 'no-store',
             revalidate: 5,
         })
         if(!res.ok) {
-            throw new Error(`Failed to fetch ${url}`)
+            throw new Error(`Failed to fetch todos`)
         }
         return res.json()
     } catch(error) {
