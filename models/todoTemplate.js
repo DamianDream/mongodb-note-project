@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const topicSchema = new Schema(
+const todoSchema = new Schema(
     {
         title: String,
         description: String,
@@ -10,6 +10,6 @@ const topicSchema = new Schema(
     }
 );
 
-const Topic = mongoose.model.Topic || mongoose.model("Topic", topicSchema);
+const TodoTemplate = mongoose.models.Todo || mongoose.model("Todo", todoSchema);
 
-export default Topic;
+export default TodoTemplate;

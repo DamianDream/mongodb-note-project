@@ -1,5 +1,4 @@
-import TopicsList from '@/components/TopicsList'
-
+import TodosList from '@/components/TodosList'
 export default function Home() {
-  return <TopicsList/>
+  return <TodosList/>
 }

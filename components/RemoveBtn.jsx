@@ -1,10 +1,24 @@
+"use client"
 
-import {HiOutlineTrash} from 'react-icons/hi'
+import { HiOutlineTrash } from 'react-icons/hi'
+import { useRouter } from 'next/navigation'
 
-function RemoveBtn() {
+function RemoveBtn({ id }) {
+    const router = useRouter()
+
+    const removeTodo = async () => {
+        const res = await fetch(`http://localhost:3000/api/todos?id=${id}`, {
+            method: "DELETE",
+        })
+
+        if(res.ok) router.refresh()
+    }
+
     return (
-        <button className='text-red-400'>
-            <HiOutlineTrash size={24}/>
+        <button
+            onClick={removeTodo}
+            className='text-white font-bold bg-red-300 p-2 rounded hover:bg-red-500'>
+            <HiOutlineTrash className="hover:animate-pulse" size={20}/>
         </button>
     )
 }
